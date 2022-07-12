@@ -1,5 +1,8 @@
 # awk-chess
-Welcome to Awkward Chess [under beta testing]
+Welcome to Awk Chess
+
+<img width="582" alt="image" src="https://user-images.githubusercontent.com/44823431/178434373-a84c2179-51a5-4e80-9c9a-6899a43b9d12.png">
+
 
 ## How to start
 
