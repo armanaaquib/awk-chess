@@ -12,7 +12,7 @@ BEGIN{
 
   #printing some message reated to game
   print ""
-  print "Welcome to Awkward Chess [under beta testing]"
+  print "Welcome to Awkward Chess build by STAR"
   display_manual()
   #displaying board and asking first input to start the game
   display_board(chessBoard)
@@ -33,7 +33,7 @@ $1 ~ /^[Hh][Ee][Ll][Pp]$/{
 }
 
 ( is_wrong_person(chessBoard,curPos,turn) ){
-  print "Can't move opponent pieces."
+  print "Can't move opponent piece."
   ask_input(turn)
   next
 }
@@ -205,7 +205,7 @@ function determine_destination(chessBoard,curPos,destPos){
   change_king_position(destPos["row"],destPos["coloumn"])
 
   if(is_my_king_check(chessBoard,turn)){
-    print "Your king is or will be in check. Please save your King. (** Unless you will loss the match **)"
+    print "Your king is or will be in check. Please save your King. (** Otherwise you will loss the game **)"
     chessBoard[curPos["row"],curPos["coloumn"]] = chessBoard[destPos["row"],destPos["coloumn"]]
     chessBoard[destPos["row"],destPos["coloumn"]] = "  "
     change_king_position(curPos["row"],curPos["coloumn"])
@@ -607,11 +607,11 @@ function display_manual(){
   print "Please read guide carefully before playing:"
   print ""
   print "Pieces     Options        Action"
-  print "Pawn       ff             to go forward two step if it is pawn's first move"
+  print "Pawn(♟)    ff             to go forward two step if it is pawn's first move"
   print "           f              to go forward one step"
   print "           fr             to go forward right one step"
   print "           fl             to go forward left one step"
-  print "Knight     fr             to go 2 steps forward and 1 step right"
+  print "Knight(♞)  fr             to go 2 steps forward and 1 step right"
   print "           fl             to go 2 steps forward and 1 step left"
   print "           br             to go 2 steps backward and 1 step right"
   print "           bl             to go 2 steps backward and 1 step left"
@@ -619,16 +619,16 @@ function display_manual(){
   print "           rb             to go 2 steps right and 1 step backward"
   print "           lf             to go 2 steps left and 1 step forward"
   print "           lb             to go 2 steps left and 1 step backward"
-  print "Rook       l n            to go left n steps"
+  print "Rook(♜)    l n            to go left n steps"
   print "           r n            to go right n steps"
   print "           f n            to go forward n steps"
   print "           b n            to go backward n steps"
-  print "Bishop     fr n           to go forward right diagonally n steps"
+  print "Bishop(♝)  fr n           to go forward right diagonally n steps"
   print "           fl n           to go forward left diagonally n setps"
   print "           br n           to go backward right diagonally n steps"
   print "           bl n           to go backward left diagonally n steps"
-  print "Queen      all Rook and Bishop options"
-  print "King       all Rook and Bishop options withou [n] option"
+  print "Queen(♛)   all Rook and Bishop options"
+  print "King(♚)    all Rook and Bishop options withou [n] option"
   print "Input Format:"
   print "boxpos option [n]"
   print "Example:"
